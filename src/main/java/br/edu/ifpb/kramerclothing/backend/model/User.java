@@ -3,7 +3,7 @@ package br.edu.ifpb.kramerclothing.backend.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tb_usur")
+@Table(name = "tb_user")
 public class User {
 
     @Id
@@ -12,6 +12,14 @@ public class User {
     private String nome;
     private String cpf;
     private Integer idade;
+
+    public User() {}
+
+    public User(String nome, String CPF, Integer idade) {
+        this.nome = nome;
+        this.cpf = CPF;
+        this.idade = idade;
+    }
 
     public Long getId() {
         return id;
