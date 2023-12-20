@@ -13,6 +13,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/clothings")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ClothingController {
     @Autowired
     private ClothingService clothingService;

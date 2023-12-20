@@ -13,6 +13,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/kits")
+@CrossOrigin(origins = "http://localhost:4200")
 public class KitController {
     @Autowired
     private KitService kitService;

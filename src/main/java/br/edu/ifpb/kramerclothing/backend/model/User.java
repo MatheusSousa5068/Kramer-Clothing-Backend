@@ -9,43 +9,43 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String nome;
-    private String cpf;
-    private Integer idade;
+    private String name;
+    private String email;
+    private String password;
 
     public User() {}
 
-    public User(String nome, String CPF, Integer idade) {
-        this.nome = nome;
-        this.cpf = CPF;
-        this.idade = idade;
+    public User(String name, String email, String password) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
     }
 
     public Long getId() {
         return id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public Integer getIdade() {
-        return idade;
+    public String getPassword() {
+        return password;
     }
 
-    public void setIdade(Integer idade) {
-        this.idade = idade;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

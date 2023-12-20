@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +22,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/users")
+@CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -40,13 +42,13 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable("id") Long id) {
-        return this.userService.getUserById(id);
+    public User getUserById(@PathVariable("id") String id) {
+        return this.userService.getUserByEmail(id);
     }
 
     @PostMapping
     public User create(@RequestBody @Valid DataUserCreateDTO user) {
-        User userToCreate = new User(user.nome(), user.CPF(), user.idade());
+        User userToCreate = new User(user.name(), user.email(), user.password());
 
         return this.userService.createOrUpdate(userToCreate);
     }

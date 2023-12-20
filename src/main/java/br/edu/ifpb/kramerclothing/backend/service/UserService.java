@@ -22,12 +22,15 @@ public class UserService {
     public User getUserById(Long id) {
         return this.userRepository.findById(id).orElse(null);
     }
+    
+    public User getUserByEmail(String email) {
+    	return this.userRepository.findByEmail(email);
+    }
 
     @Transactional
     public User createOrUpdate(User user) {
         User userSearched = this.userRepository.save(user);
 
-        user.setNome(user.getNome() + " - alterado");
         return userSearched;
     }
 
