@@ -14,6 +14,7 @@ public class Clothing {
     private String size;
     private String color;
     private String material;
+    private String image_icon;
 
     @ManyToOne
     @JoinColumn(name = "kit_id")

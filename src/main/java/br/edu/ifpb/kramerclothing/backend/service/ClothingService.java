@@ -28,7 +28,7 @@ public class ClothingService {
         Clothing clothingSearched = this.clothingRepository.save(clothing);
 
         // Modificação fictícia para exemplificar
-        clothing.setDescription(clothing.getDescription() + " - alterado");
+        clothing.setDescription(clothing.getDescription());
         return clothingSearched;
     }
 

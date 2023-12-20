@@ -9,6 +9,7 @@ public record DataClothingCreateDTO(
         @NotEmpty String size,
         @NotEmpty String color,
         @NotEmpty String material,
+        @NotEmpty String image_icon,
         Kit kit
 ) {
 }

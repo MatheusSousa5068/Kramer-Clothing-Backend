@@ -28,7 +28,7 @@ public class OrderService {
         Order orderSearched = this.orderRepository.save(order);
 
         // Modificação fictícia para exemplificar
-        order.setDate(order.getDate() + " - alterado");
+        order.setDate(order.getDate());
         return orderSearched;
     }
 

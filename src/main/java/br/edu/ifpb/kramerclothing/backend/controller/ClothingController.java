@@ -12,7 +12,7 @@ import br.edu.ifpb.kramerclothing.backend.service.ClothingService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/clothings")
+@RequestMapping("/clothing")
 @CrossOrigin(origins = "http://localhost:4200")
 public class ClothingController {
     @Autowired

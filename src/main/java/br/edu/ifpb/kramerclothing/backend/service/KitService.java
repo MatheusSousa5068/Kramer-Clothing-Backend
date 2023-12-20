@@ -28,7 +28,7 @@ public class KitService {
         Kit kitSearched = this.kitRepository.save(kit);
 
         // Modificação fictícia para exemplificar
-        kit.setName(kit.getName() + " - alterado");
+        kit.setName(kit.getName());
         return kitSearched;
     }
 

@@ -5,13 +5,13 @@ import jakarta.validation.constraints.NotEmpty;
 import java.util.List;
 
 public record DataOrderCreateDTO(
-        @NotEmpty String date,
-        @NotEmpty String devolutionDate,
-        @NotEmpty String status,
+        String date,
+        String devolutionDate,
+        String status,
         double price,
-        @NotEmpty String kitId,
-        @NotEmpty String planId,
+        String kitId,
+        String planId,
         List<String> clothesIds,
-        @NotEmpty String userId
+        String userId
 ) {
 }
