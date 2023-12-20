@@ -28,18 +28,27 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
-    public List<User> read(@RequestParam(value="id", required = false) Long id) {
+    public List<User> read(@RequestParam(value="id", required = false) Long id,
+                          @RequestParam(value="email", required = false) String email) {
         if(id != null) {
             User userSearched = this.userService.getUserById(id);
             if(userSearched != null) {
                 return Collections.singletonList(userSearched);
             }
+            return Collections.emptyList();
+        }
 
-            return null;
+        if(email != null) {
+            User userByEmail = this.userService.getUserByEmail(email);
+            if(userByEmail != null) {
+                return Collections.singletonList(userByEmail);
+            }
+            return Collections.emptyList();
         }
 
         return this.userService.readAll();
     }
+
 
     @GetMapping("/{id}")
     public User getUserById(@PathVariable("id") String id) {
