@@ -26,8 +26,6 @@ public class ClothingService {
     @Transactional
     public Clothing createOrUpdate(Clothing clothing) {
         Clothing clothingSearched = this.clothingRepository.save(clothing);
-
-        // Modificação fictícia para exemplificar
         clothing.setDescription(clothing.getDescription());
         return clothingSearched;
     }

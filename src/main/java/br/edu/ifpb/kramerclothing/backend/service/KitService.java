@@ -26,8 +26,6 @@ public class KitService {
     @Transactional
     public Kit createOrUpdate(Kit kit) {
         Kit kitSearched = this.kitRepository.save(kit);
-
-        // Modificação fictícia para exemplificar
         kit.setName(kit.getName());
         return kitSearched;
     }

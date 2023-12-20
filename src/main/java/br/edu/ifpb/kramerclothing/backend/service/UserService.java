@@ -30,7 +30,6 @@ public class UserService {
     @Transactional
     public User createOrUpdate(User user) {
         User userSearched = this.userRepository.save(user);
-
         return userSearched;
     }
 

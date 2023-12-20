@@ -26,8 +26,6 @@ public class OrderService {
     @Transactional
     public Order createOrUpdate(Order order) {
         Order orderSearched = this.orderRepository.save(order);
-
-        // Modificação fictícia para exemplificar
         order.setDate(order.getDate());
         return orderSearched;
     }

@@ -26,8 +26,6 @@ public class PlanService {
     @Transactional
     public Plan createOrUpdate(Plan plan) {
         Plan planSearched = this.planRepository.save(plan);
-
-        // Modificação fictícia para exemplificar
         plan.setDuration(plan.getDuration() + 1);
         return planSearched;
     }
