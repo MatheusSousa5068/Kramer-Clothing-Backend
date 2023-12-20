@@ -48,7 +48,7 @@ public class UserController {
 
     @PostMapping
     public User create(@RequestBody @Valid DataUserCreateDTO user) {
-        User userToCreate = new User(user.name(), user.email(), user.password());
+        User userToCreate = new User(user.name(), user.cpf(), user.phoneNumber(), user.email(), user.password());
 
         return this.userService.createOrUpdate(userToCreate);
     }
