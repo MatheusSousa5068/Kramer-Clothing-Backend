@@ -22,6 +22,10 @@ public class OrderService {
     public Order getOrderById(Long id) {
         return this.orderRepository.findById(id).orElse(null);
     }
+    
+    public List<Order> getOrderByUserId(String userId) {
+    	return this.orderRepository.findByUserId(userId);
+    }
 
     @Transactional
     public Order createOrUpdate(Order order) {

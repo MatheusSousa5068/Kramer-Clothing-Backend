@@ -19,7 +19,8 @@ public class OrderController {
     private OrderService orderService;
 
     @GetMapping
-    public List<Order> read(@RequestParam(value = "id", required = false) Long id) {
+    public List<Order> read(@RequestParam(value = "id", required = false) Long id,
+    		@RequestParam(value="userId", required = false) String userId) {
         if (id != null) {
             Order orderSearched = this.orderService.getOrderById(id);
             if (orderSearched != null) {
@@ -27,6 +28,12 @@ public class OrderController {
             }
 
             return null;
+        }
+        
+        if (userId != null) {
+            List<Order> orderSearched = this.orderService.getOrderByUserId(userId);
+
+            return orderSearched;
         }
 
         return this.orderService.readAll();
