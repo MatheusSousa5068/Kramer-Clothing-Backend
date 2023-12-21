@@ -45,7 +45,7 @@ public class ClothingController {
                 clothing.size(),
                 clothing.color(),
                 clothing.material(),
-                clothing.kit()
+                clothing.kitId()
         );
 
         return this.clothingService.createOrUpdate(clothingToCreate);

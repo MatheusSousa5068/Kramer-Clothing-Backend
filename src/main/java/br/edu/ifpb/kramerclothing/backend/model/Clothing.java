@@ -15,20 +15,18 @@ public class Clothing {
     private String color;
     private String material;
 
-    @ManyToOne
-    @JoinColumn(name = "kit_id")
-    private Kit kit;
+    private Long kitId;
 
     public Clothing() {
     }
 
-    public Clothing(String description, String brand, String size, String color, String material, Kit kit) {
+    public Clothing(String description, String brand, String size, String color, String material, Long kit) {
         this.description = description;
         this.brand = brand;
         this.size = size;
         this.color = color;
         this.material = material;
-        this.kit = kit;
+        this.kitId = kit;
     }
 
     public Long getId() {
@@ -79,11 +77,11 @@ public class Clothing {
         this.material = material;
     }
 
-    public Kit getKit() {
-        return kit;
+    public Long getKitId() {
+        return kitId;
     }
 
-    public void setKit(Kit kit) {
-        this.kit = kit;
+    public void setKitId(Long kit) {
+        this.kitId = kit;
     }
 }
