@@ -22,6 +22,10 @@ public class ClothingService {
     public Clothing getClothingById(Long id) {
         return this.clothingRepository.findById(id).orElse(null);
     }
+    
+    public List<Clothing> getClothingByKitId(Long kitId) {
+    	return this.clothingRepository.findByKitId(kitId);
+    }
 
     @Transactional
     public Clothing createOrUpdate(Clothing clothing) {

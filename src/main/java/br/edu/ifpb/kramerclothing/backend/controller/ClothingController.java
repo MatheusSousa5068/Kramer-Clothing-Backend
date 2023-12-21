@@ -19,7 +19,8 @@ public class ClothingController {
     private ClothingService clothingService;
 
     @GetMapping
-    public List<Clothing> read(@RequestParam(value = "id", required = false) Long id) {
+    public List<Clothing> read(@RequestParam(value = "id", required = false) Long id,
+    							@RequestParam(value="kitId", required=false) Long kitId) {
         if (id != null) {
             Clothing clothingSearched = this.clothingService.getClothingById(id);
             if (clothingSearched != null) {
@@ -27,6 +28,12 @@ public class ClothingController {
             }
 
             return null;
+        }
+        
+        if(kitId != null) {
+        	List<Clothing> clothingSearched = this.clothingService.getClothingByKitId(kitId);
+        	
+        	return clothingSearched;
         }
 
         return this.clothingService.readAll();
